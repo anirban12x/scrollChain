@@ -1,0 +1,642 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  background-image: url("./assets/bgback3.png");
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.810);
+  backdrop-filter: blur(3px);
+min-height: 100vh;
+height: max-content;
+}
+
+
+:root {
+  font-family: "Poppins", sans-serif;
+  color-scheme: dark;
+  height: 100%;
+}
+#root{
+  min-height: 100%;
+}
+
+.walletButton {
+  padding: 20px 40px;
+  background-image: none;
+  border: none;
+  position: relative;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 3px;
+  cursor: pointer;
+  height: 60px;
+}
+
+.walletButton:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* border-width: 2px;
+    border-style: solid;
+  border-image: linear-gradient(to right, #f97316 0%, #9a3412 100%) 1;*/
+  border: 2px solid #9a3412;
+  transition: transform 0.2s;
+}
+
+.walletButton:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #f97316;
+  transition: transform 0.2s;
+}
+
+.walletButton:after {
+  transform: translate(3px, 3px);
+}
+
+.walletButton:before {
+  transform: translate(-3px, -3px);
+}
+
+.walletButton:hover:after {
+  transform: translate(0);
+}
+
+.walletButton:hover:before {
+  transform: translate(0);
+}
+
+#AccountAddressbtn {
+
+  /*bg*/
+  /*txt*/
+  /*success*/
+  .buttons {
+    display: flex;
+    justify-content: space-around;
+    top: 20px;
+    left: 20px;
+  }
+
+  .buttons button {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    margin: 10px 15px 5px 10px;
+
+
+    color: #f97316;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+  }
+
+  .buttons button:before,
+  .buttons button:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #f97316;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+
+  .buttons button:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+
+  .buttons button:after {
+    left: 0;
+    bottom: 0;
+  }
+
+  .buttons button span {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+  }
+
+  .buttons button span:before,
+  .buttons button span:after {
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 0;
+    background-color: #f97316;
+    transition: all 0.3s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+
+  .buttons button span:before {
+    right: 0;
+    top: 0;
+    transition: all 0.5s cubic-bezier(0.35, 0.1, 0.25, 1);
+  }
+
+  .buttons button span:after {
+    left: 0;
+    bottom: 0;
+  }
+
+  .buttons button p {
+    padding: 0;
+    margin: 0;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .buttons button p:before,
+  .buttons button p:after {
+    position: absolute;
+    width: 100%;
+    transition: all 0.4s cubic-bezier(0.35, 0.1, 0.25, 1);
+    z-index: 1;
+    left: 0;
+  }
+
+  .buttons button p:before {
+    content: attr(data-title);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .buttons button p:after {
+    content: attr(data-text);
+    top: 150%;
+    color: #fff;
+  }
+
+  .buttons button:hover:before,
+  .buttons button:hover:after {
+    width: 100%;
+  }
+
+  .buttons button:hover span {
+    z-index: 1;
+  }
+
+  .buttons button:hover span:before,
+  .buttons button:hover span:after {
+    height: 100%;
+  }
+
+  .buttons button:hover p:before {
+    top: -50%;
+    transform: rotate(5deg);
+  }
+
+  .buttons button:hover p:after {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .buttons button.start {
+    background-color: #f97316;
+    box-shadow: 0px 5px 10px -10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+  }
+
+  .buttons button.start p:before {
+    top: -50%;
+    transform: rotate(5deg);
+  }
+
+  .buttons button.start p:after {
+    color: white;
+    transition: all 0s ease;
+    content: attr(data-start);
+    top: 50%;
+    transform: translateY(-50%);
+    animation: start 0.3s ease;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes start {
+    from {
+      top: -50%;
+    }
+  }
+
+  .buttons button.start:hover:before,
+  .buttons button.start:hover:after {
+    display: none;
+  }
+
+  .buttons button.start:hover span {
+    display: none;
+  }
+
+  .buttons button:active {
+    outline: none;
+    border: none;
+  }
+
+  .buttons button:focus {
+    outline: 0;
+  }
+}
+
+/*discover*/
+.projectCard {
+  width: 300px;
+  display: inline-block;
+  height: 100%;
+  padding: 40px 15px 0px 0px;
+}
+
+.cardImg {
+  width: 70%;
+  aspect-ratio: 1;
+  background-color: #f3f3f3;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cardDetail {
+  width: 100%;
+  height: 55%;
+}
+
+.cardTitle {
+  font-family: Poppins ;
+  padding: 12px 0px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: orangered;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cardTitle:hover {
+  color: #037362;
+  text-decoration: underline;
+  
+}
+.cardAuthor:hover {
+  color: #037362;
+
+}
+.cardDesc:hover {
+  color: #037362;
+  
+}
+.discoverHeading:hover {
+  color: #037362;
+  
+}
+
+.cardDesc {
+  font-size: 18px;
+  color: orangered;
+  letter-spacing: 0.5px;
+  max-height: 1.5rem;
+  position: relative;
+  white-space: initial;
+  overflow-y: hidden;
+  font-family: Poppins;
+}
+
+.cardDesc::after {
+  content: "...";
+  position: absolute;
+  right: 0px;
+  bottom: -1px;
+}
+
+.cardAuthor {
+  margin: 25px 0px;
+  color: orangered;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Category Css */
+
+.category {
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 0.1rem solid #dcdedd;
+}
+
+.categoryItem {
+  color: #656969;
+  font-size: 17px;
+  line-height: 2.4rem;
+  margin: 10px;
+  position: relative;
+  cursor: pointer;
+  font-family: Poppins;
+}
+
+.categoryItem:hover,
+.categoryItem:focus {
+  color: #135203;
+}
+
+.categoryItem::after {
+  content: "";
+  bottom: 5px;
+  left: 0px;
+  width: 100%;
+  height: 0.1rem;
+  position: absolute;
+  text-decoration: underline;
+  background-color: #034752;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+.categoryItem:hover::after,
+.categoryItem:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Discover Component css */
+.discoverHeading {
+  height: 40px;
+  font-size: 3.5rem;
+  font-family: Poppins;
+  color: orangered;
+  margin: 10px 12%;
+  font-weight: 800;
+  margin-left: 550px;
+  /* display: flex;
+    justify-content: center; */
+}
+
+.discoverContainer {
+  height: auto;
+  width: 100%;
+  padding: 20px 10%;
+  /* background-color: #034752; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 15px 15px;
+  /*overflow-x: auto;
+  overflow-y: auto;*/
+}
+
+.projectCardWrapper {
+  height: 380px;
+  display: inline-block;
+  margin: 0px 0px 0px 20px;
+  /* background-color: #037362; */
+}
+
+
+::-webkit-scrollbar {
+  width: 6px;
+  color: #f97316;
+  transition: all .4s ease;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f97316;
+  border-radius: 4px;
+  width: 6px;
+  transition: all .4s ease;
+}
+
+::-webkit-scrollbar-track {
+  background: #101010;
+  border-radius: 4px;
+  width: 6px;
+}
+
+.navback{
+background: #0c0500a5;
+backdrop-filter: blur(50px);
+}
+
+/* styles.css */
+.underline-effect {
+position: relative;
+display: inline-block;
+cursor: pointer;
+}
+
+.underline-effect::after {
+content: "";
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 50%;
+background-color: orange; /* Customize the color as needed */
+transition: width 0.3s ease, left 0.3s ease;
+}
+
+.underline-effect:hover::after {
+width: 100%;
+left: 0;
+}
+
+
+
+.projectInformationContainer {
+  color: white;
+}
+
+.projectInformationContainer progress {
+  width: 95%;
+  height: 1em;
+  background: black;
+  color: #f97316;
+}
+
+.fundingValue h2 {
+  color: rgb(255, 216, 171);
+  font-size: 2.2em;
+  margin-bottom: 0%;
+}
+
+.goalValueContainer {
+  margin-top: 1%;
+  position: relative;
+  margin-left: 1%;
+  font-size: 110%;
+}
+
+
+.contributors {
+  max-height: 500px;
+
+}
+
+.tableRow {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.lightRow {
+  background-color: rgb(18, 18, 21);
+}
+
+.darkRow {
+  background-color: rgb(18, 18, 21);
+}
+
+.header {
+  border-bottom: 1px solid #656969;
+  background-color: rgb(18, 18, 21);
+}
+
+.header .item {
+  font-weight: 700;
+}
+
+.item {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0px 10px;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bg-secondary-black{
+  background-color: rgb(18, 18, 21);
+  box-shadow: 2px white;
+}
+
+.bg-glow-custom-1{
+  box-shadow: 0 0 20px 0 rgb(255, 187, 110);
+}
+
+.bg-glow-custom-2{
+  box-shadow: 0 0 30px 2px #f97316;
+}
+
+.hover-bg-glow-custom-2:hover{
+  box-shadow: 0 0 30px 2px #f97316;
+}
+
+/* Payment modal */
+
+.modal {
+  display: block;
+  position: fixed;
+  height: 50%;
+  width: 50%;
+  left: 25%;
+  top: 25%;
+  z-index: 1;
+  overflow: auto;
+  background-color: rgb(24, 25, 27);
+  color: white;
+  animation-name: animatetop;
+  animation-duration: 0.5s;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  border-radius: 25px;
+  padding: 25px 35px;
+}
+
+
+.modalHeader h1 {
+  font-size: 2.5em;
+}
+
+.modalContent {
+  position: relative;
+  margin-left: 0%;
+  margin-top: 8%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+}
+
+.closeBtn {
+  float: right;
+  color: lightgray;
+  font-size: 30px;
+  font-weight: bold;
+  margin-right: 2%;
+  cursor: pointer;
+}
+
+.closeBtn:hover {
+  color: darkgray;
+}
+
+.paymentLabel {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.payment {
+  height: 30%;
+  width: 70%;
+  justify-content: center;
+  padding: 2%;
+  border-radius: 5px;
+  border: none;
+  background: rgb(42, 43, 48);
+  font-size: 1.3em;
+}
+
+.submit {
+  margin: 30px 0;
+  width: 40%;
+  font-size: 1.5em;
+  padding: 1%;
+  justify-content: center;
+  color: #fff;
+  background-color: black;
+  border: 2px solid white;
+  font-weight: bold;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.submit:hover {
+  background: #f97316;
+  border-color: #f97316;
+}
